@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio Personal</title>
+    <link
+      rel="shortcut icon"
+      href="assets/images/Rocky_Dev.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="assets/css/stylesheet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="assets/js/darkmode_no_reload.js" defer></script>
+    <script src="assets/js/send_message.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init({
+          publicKey: "xfvcHvNbYPq1h7ohs",
+        });
+      })();
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="sidebar-info">
+        <figure class="avatar-box">
+          <img src="assets/images/iam.png" alt="Richard Peñaloza" width="50" />
+        </figure>
+        <div class="info-content">
+          <h1 class="name" title="Richard Peñaloza">Richard Peñaloza</h1>
+        </div>
+      </div>
+
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="#about">Sobre mí</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li><a href="#skills">Habilidades</a></li>
+          <li><a href="#contact">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div class="toggles">
+        <div class="theme-toggle">
+          <label for="light-mode">
+            <img
+              class="icon"
+              id="light-mode-icon"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAbxJREFUSEu11U+ITlEYBvDfkCysJEopmthbywYLlhbKnmYWIjHNkD8hhAgLMxvs7ZQdhZW1tbIzo0bIykL5c16dT7fTvd+5n745m9u5973Pc97nfd/nTFjhNbHC+EYhiNhf+UC9/+sdyN/DjI3gIhbwpZDwdyZZXbzfhCO4WUrelsF5XMM77MXHSp224DW24yxuNePbCLbiFSYxg7sVgrkM+j4f6EONIL5HylO4noMP4Rj25P1LzONp3p/DoxTzqY9EZcydnElbIpdT8a8My7DWRYfxJANczYWP7XFErWLtx4sukhrBW+zEadwrQAbN8BwHagTNHo/YAfFPrMJ6fCtANucO+4oNxZz8wxgAdRH8SIVe00EQjbCM71hXI+jK8E3Sd1cCiVa83SFRzEDMS+uq1eBgoxWjyA+wNk34CcxmxNA/6vBfBPHTsDa90JiVkQhC36PptDcag3YSu/P+GR4jnrGiox72HbRt2VvieQr3hw0SzmSTC6uISV9sxrfVINIOvcPs9iXLWKoQhNmFd+3oa3aBdyl7zecCvMuuN6aZmG6rR62LymzHduG0qTLWG60ie//Po0jUH7UR+QcpUk4ZRDtj1AAAAABJRU5ErkJggg=="
+              alt="Light Mode"
+            />
+            <div class="toggle__mov"></div>
+          </label>
+          <input type="checkbox" id="light-mode" name="theme" />
+
+          <label for="dark-mode">
+            <img
+              class="icon"
+              id="dark-mode-icon"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAgZJREFUSEu11UuoTWEUB/Df9RwZIK8ICRlQIoryGCqFIaW8YuCRMKJEJiZeZaCQR5LHCJkoE2RE5DFAmUihFCWSKHtpndr3dPbd57j3rvra3977W+u/Hv+1vi79LF39bF8dwFhsyfUbkzt1qCeAHTiCIWn0I8b1BcBgXMeqNPYI8/AAi/sC4Bw24Ac24jPu4g6W9RZgBW7iD5bgYXp9D08wt7cAzzELh3AgjY1B5P8nRuNbJyDlIs/EC3zHBHwtGXqK2Zm6C/8LsBtHcRVrmoxsx0m8zIJHNG1JOYLT2IytONWkPRRvMR4Xsb4t63RrtBtYmetWCwMLcB+DEM5sQzRfj1KOIHK7DqtxrUIrUnceEdEr7EM4E6xrKWWAYM7+ZE/sq2QqLmN+HggyPMv9gCRDfJsY38oAC5P30bkN5SqQgdhb/DyI2DfL64IsM5oBAizCnp4dG51bJ1GPUQXDRmJEQe+zRXTTsAsnmgHiPfJ/BR8yivd1CKX/DSr/KlgYzfmvj1pN09tYXvRChBlFjSbrScLGzuyhqEGM9zMNhVYAw/EYU5IdkefDFUyZhEtYlAaPFaNkT9mbqvtgGI5jU4kpMa5j6L1BEGJppjG8/pJ9EentJnU3Wozn4H3cbFUSo3wtPrU6UAcQOsGUGHRz8hlpiboEneP5rq5AHRCl86PtRNC51ZLGX0IpXBnBPatbAAAAAElFTkSuQmCC"
+              alt="Dark Mode"
+            />
+          </label>
+          <input type="checkbox" id="dark-mode" name="theme" />
+        </div>
+        <!--<div class="language-toggle">
+          <label for="spanish"></label>
+          <input type="checkbox" id="spanish" name="language" />
+          <label for="english"></label>
+          <input type="checkbox" id="english" name="language" />
+        </div>
+        -->
+      </div>
+    </header>
+
+    <nav class="mobile-nav">
+      <ul>
+        <li>
+          <a href="#about">
+            <img
+              class="icon__nav"
+              src="assets/images/sobre mi.png"
+              alt="Sobre mí"
+            />
+            <span>Sobre mí</span>
+          </a>
+        </li>
+        <li>
+          <a href="#projects">
+            <img
+              class="icon__nav"
+              src="assets/images/proyectos.png"
+              alt="Proyectos"
+            />
+            <span>Proyectos</span>
+          </a>
+        </li>
+        <li>
+          <a href="#skills">
+            <img
+              class="icon__nav"
+              src="assets/images/skills.png"
+              alt="Habilidades"
+            />
+            <span>Habilidades</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact">
+            <img
+              class="icon__nav"
+              src="assets/images/contacto.png"
+              alt="Contacto"
+            />
+            <span>Contacto</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <section id="about">
+        <div class="about__me">
+          <div>
+            <article>
+              <h3 class="about-us">Sobre Mí</h3>
+              <p>
+                Soy un programador con experiencia en HTML, CSS y JavaScript. Mi
+                enfoque principal ha sido crear interfaces web interactivas y
+                responsivas utilizando estas tecnologías. Estoy interesado en
+                seguir aprendiendo y mejorando mis habilidades en desarrollo
+                front-end para poder crear experiencias de usuario más
+                atractivas y funcionales.
+              </p>
+            </article>
+          </div>
+          <div class="about-icons">
+            <img
+              src="assets/images/linkedin.png"
+              width="50"
+              alt="Icono 1"
+              class="icon__profile1"
+              onclick="window.open('https://www.linkedin.com/in/richard-pe%C3%B1aloza-112355198/', '_blank')"
+            />
+            <img
+              src="assets/images/github.png"
+              width="45"
+              height="45"
+              alt="Icono 2"
+              class="icon__profile2"
+              onclick="window.open('https://github.com/britanian7', '_blank')"
+            />
+
+            <div class="btn__me2">
+              <a href="assets/images/bash.png" download>
+                <button class="btn" id="btn__me">Descargar CV</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <article>
+          <h3 class="projects">Proyectos</h3>
+          <p>
+            <!-- Párrafo opcional dentro del artículo -->
+          </p>
+          <ul class="project-list">
+            <li
+              class="project-item active"
+              data-filter-item
+              data-category="web development"
+            >
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline">+</ion-icon>
+                  </div>
+                  <img
+                    src="./assets/images/project-1.jpg"
+                    alt="finanzas"
+                    loading="lazy"
+                  />
+                </figure>
+                <h3 class="project-title">Finanzas</h3>
+                <p class="project-category">Desarrollo Web</p>
+              </a>
+            </li>
+
+            <li
+              class="project-item active"
+              data-filter-item
+              data-category="web development"
+            >
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline">+</ion-icon>
+                  </div>
+                  <img
+                    src="./assets/images/project-2.png"
+                    alt="orizon"
+                    loading="lazy"
+                  />
+                </figure>
+                <h3 class="project-title">Orizon</h3>
+                <p class="project-category">Desarrollo Web</p>
+              </a>
+            </li>
+
+            <li
+              class="project-item active"
+              data-filter-item
+              data-category="applications"
+            >
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline">+</ion-icon>
+                  </div>
+                  <img
+                    src="./assets/images/project-3.jpg"
+                    alt="Inmobiliaria"
+                    loading="lazy"
+                  />
+                </figure>
+                <h3 class="project-title">Inmobiliaria</h3>
+                <p class="project-category">Desarrollo Web</p>
+              </a>
+            </li>
+
+            <li
+              class="project-item active"
+              data-filter-item
+              data-category="applications"
+            >
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline">+</ion-icon>
+                  </div>
+                  <img
+                    src="./assets/images/project-4.png"
+                    alt="Gaming"
+                    loading="lazy"
+                  />
+                </figure>
+                <h3 class="project-title">Gaming</h3>
+                <p class="project-category">Aplicación</p>
+              </a>
+            </li>
+
+            <li
+              class="project-item active"
+              data-filter-item
+              data-category="web design"
+            >
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline">+</ion-icon>
+                  </div>
+                  <img
+                    src="./assets/images/project-5.png"
+                    alt="Arte"
+                    loading="lazy"
+                  />
+                </figure>
+                <h3 class="project-title">Arte</h3>
+                <p class="project-category">Diseño Web</p>
+              </a>
+            </li>
+
+            <li
+              class="project-item active"
+              data-filter-item
+              data-category="web design"
+            >
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline">+</ion-icon>
+                  </div>
+                  <img
+                    src="./assets/images/project-6.png"
+                    alt="CRM"
+                    loading="lazy"
+                  />
+                </figure>
+                <h3 class="project-title">CRM</h3>
+                <p class="project-category">Desarrollo Web</p>
+              </a>
+            </li>
+
+            <li
+              class="project-item active"
+              data-filter-item
+              data-category="web development"
+            >
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline">+</ion-icon>
+                  </div>
+                  <img
+                    src="./assets/images/project-7.png"
+                    alt="ERP"
+                    loading="lazy"
+                  />
+                </figure>
+                <h3 class="project-title">ERP</h3>
+                <p class="project-category">Desarrollo Web</p>
+              </a>
+            </li>
+
+            <li
+              class="project-item active"
+              data-filter-item
+              data-category="applications"
+            >
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline">+</ion-icon>
+                  </div>
+                  <img
+                    src="./assets/images/project-8.jpg"
+                    alt="Task List"
+                    loading="lazy"
+                  />
+                </figure>
+                <h3 class="project-title">Task List</h3>
+                <p class="project-category">Aplicación</p>
+              </a>
+            </li>
+
+            <li
+              class="project-item active"
+              data-filter-item
+              data-category="web development"
+            >
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline">+</ion-icon>
+                  </div>
+                  <img
+                    src="./assets/images/project-9.png"
+                    alt="Transporte"
+                    loading="lazy"
+                  />
+                </figure>
+                <h3 class="project-title">Transporte</h3>
+                <p class="project-category">Desarrollo Web</p>
+              </a>
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <section id="skills">
+        <article>
+          <h3 class="skills">Habilidades</h3>
+          <div class="group__skills">
+            <div class="frontend common-class">
+              <h3>Frontend</h3>
+              <div class="group__sk">
+                <div class="item">
+                  <img
+                    src="assets/images/css.png"
+                    width="70"
+                    alt="Imagen 1"
+                    title="CSS"
+                  />
+                </div>
+                <div class="item">
+                  <img
+                    src="assets/images/html.png"
+                    width="70"
+                    alt="Imagen 2"
+                    title="HTML"
+                  />
+                </div>
+                <div class="item">
+                  <img
+                    src="assets/images/javascript.png"
+                    width="70"
+                    alt="Imagen 3"
+                    title="JavaScript"
+                  />
+                </div>
+                <div class="item">
+                  <img
+                    src="assets/images/figma.png"
+                    width="70"
+                    alt="Imagen 4"
+                    title="Figma"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="backend common-class">
+              <h3>Backend</h3>
+              <div class="group__sk">
+                <div class="item">
+                  <img
+                    src="assets/images/nodejs.png"
+                    width="70"
+                    alt="Imagen 7"
+                    title="Node.js"
+                  />
+                </div>
+                <div class="item">
+                  <img
+                    src="assets/images/php.png"
+                    width="70"
+                    alt="Imagen 8"
+                    title="PHP"
+                  />
+                </div>
+                <div class="item">
+                  <img
+                    src="assets/images/apache.png"
+                    width="70"
+                    alt="Imagen 9"
+                    title="Apache"
+                  />
+                </div>
+                <div class="item">
+                  <img
+                    src="assets/images/mysql.png"
+                    width="70"
+                    alt="Imagen 10"
+                    title="MySQL"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="learning common-class">
+              <h3>Aprendiendo</h3>
+              <div class="group__sk">
+                <div class="item">
+                  <img
+                    src="assets/images/docker.png"
+                    width="70"
+                    alt="Imagen 1"
+                    title="Docker"
+                  />
+                </div>
+                <div class="item">
+                  <img
+                    src="assets/images/typescript.png"
+                    width="70"
+                    alt="Imagen 2"
+                    title="TypeScript"
+                  />
+                </div>
+                <div class="item">
+                  <img
+                    src="assets/images/aws.png"
+                    width="70"
+                    alt="Imagen 3"
+                    title="Amazon Web Services"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="tools common-class">
+              <h3>Herramientas</h3>
+              <div class="group__sk">
+                <div class="item">
+                  <img
+                    src="assets/images/git.png"
+                    width="70"
+                    alt="Imagen 1"
+                    title="Git"
+                  />
+                </div>
+                <div class="item">
+                  <img
+                    src="assets/images/github.png"
+                    width="70"
+                    alt="Imagen 2"
+                    title="GitHub"
+                  />
+                </div>
+                <div class="item">
+                  <img
+                    src="assets/images/notion.png"
+                    width="70"
+                    alt="Imagen 3"
+                    title="Notion"
+                  />
+                </div>
+                <div class="item">
+                  <img
+                    src="assets/images/visual studio vode.png"
+                    width="70"
+                    alt="Imagen 4"
+                    title="Visual Studio Code"
+                  />
+                </div>
+                <div class="item">
+                  <img
+                    src="assets/images/bash.png"
+                    width="70"
+                    alt="Imagen 5"
+                    title="Bash"
+                  />
+                </div>
+                <div class="item">
+                  <img
+                    src="assets/images/wordpress.png"
+                    width="70"
+                    alt="Imagen 6"
+                    title="WordPress"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="contact" class="contact-form">
+        <h3 class="h3 form-title">Contacto</h3>
+
+        <form
+          action="https://formspree.io/f/xjkbkkqb"
+          method="POST"
+          class="form"
+          data-form
+        >
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="name"
+              name="fullname"
+              class="form-input"
+              placeholder="Nombre Completo"
+              required
+              data-form-input
+            />
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-input"
+              placeholder="Email"
+              required
+              data-form-input
+            />
+          </div>
+          <textarea
+            name="message"
+            id="message"
+            class="form-input"
+            placeholder="Tú mensaje aquí"
+            required
+            data-form-input
+          ></textarea>
+          <button class="form-btn" type="submit" data-form-btn>
+            <ion-icon name="paper-plane"></ion-icon>
+            <span>Enviar mensaje</span>
+          </button>
+        </form>
+      </section>
+      <div id="confirmationModal" class="modal" style="display: none">
+        <div class="modal-content">
+          <p>Mensaje enviado</p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
